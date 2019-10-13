@@ -1,0 +1,17 @@
+opam-version: "1.2"
+maintainer: "Ralf Vogler <ralf.vogler@gmail.com>"
+authors: "Ralf Vogler <ralf.vogler@gmail.com>"
+homepage: "https://github.com/vogler/ppx_reflect"
+bug-reports: "https://github.com/vogler/ppx_reflect/issues"
+license: "MIT"
+dev-repo: "https://github.com/vogler/ppx_reflect.git"
+substs: "META"
+build: [make]
+install: ["ocamlfind" "install" name "META" "ppx_reflect.native"]
+remove: ["ocamlfind" "remove" name]
+depends: [
+  "ocamlfind" {build}
+  "ocamlbuild" {build}
+  "ppx_tools" {test}
+]
+available: [ocaml-version >= "4.02.1" & opam-version >= "1.2"]
